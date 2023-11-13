@@ -10,20 +10,19 @@ const PARTICLE_NUMBER: i32 = 250;
 
 const INTERACTION_DISTANCE: f64 = 500.0;
 const REPULSION_DISTANCE: f64 = 20.0;
-const REPULSION_STRENGTH: f64 = 0.05; 
+const REPULSION_STRENGTH: f64 = 0.03; 
 const DAMPING_FACTOR: f64 = 0.98;
 const FORCE_SCALING_FACTOR: f64 = 10.0;
 
 const INTERACTION_MATRIX: [[f64; 6]; 6] = [
     // Red    Blue   Green  Yellow Purple Orange
-    [  0.9,  -0.5,   0.3,  -0.7,   0.6,  -0.4], // Red
-    [  0.4,   0.8,  -0.8,   0.2,  -0.6,   0.1], // Blue
-    [ -0.3,   0.6,   0.7,  -0.5,   0.2,  -0.4], // Green
-    [  0.5,  -0.2,   0.4,   0.9,  -0.8,   0.3], // Yellow
-    [ -0.6,   0.3,  -0.2,   0.7,   0.8,  -0.9], // Purple
-    [  0.2,  -0.4,   0.5,  -0.3,   0.1,   0.9], // Orange
+    [  1.0,   1.0,  -0.5,   0.0,  -0.5,   0.0], // Red
+    [ -0.5,   1.0,   1.0,  -0.5,   0.0,  -0.5], // Blue
+    [  0.0,  -0.5,   1.0,   1.0,  -0.5,   0.0], // Green
+    [ -0.5,   0.0,  -0.5,   1.0,   1.0,  -0.5], // Yellow
+    [  0.0,  -0.5,   0.0,  -0.5,   1.0,   1.0], // Purple
+    [  1.0,   0.0,  -0.5,   0.0,  -0.5,   1.0], // Orange
 ];
-
 
 #[derive(Clone, Copy)]
 enum ParticleClass {
